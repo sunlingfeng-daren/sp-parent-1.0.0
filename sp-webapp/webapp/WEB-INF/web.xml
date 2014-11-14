@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="win_webapp" version="2.5"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+		http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	metadata-complete="true">
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.kedacom.yctx.listener.SystemInitListener</listener-class>
+	</listener>
+	<!-- filter 处理乱码问题 -->
+	<filter>
+	  	<filter-name>CharsetEncodingFilter</filter-name>
+	  	<filter-class> com.kedacom.yctx.filter.CharsetEncodingFilter</filter-class>
+	  	<init-param>  
+	          <param-name>endcoding</param-name>  
+	          <param-value>UTF-8</param-value> <!--设置你想用的字符集，我这里用的是UTF8-->  
+	    </init-param>  
+	</filter>
+	<filter-mapping>
+	  	<filter-name>CharsetEncodingFilter</filter-name>
+	  	<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+
+	<!-- springmvc 配置 -->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+</web-app>

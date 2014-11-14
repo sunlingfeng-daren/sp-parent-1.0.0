@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.kedacom.sp</groupId>
+		<artifactId>sp-parent-1.0.0</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>sp-business</artifactId>
+	<version>4.0.0</version>
+	<name>sp::Business POM</name>
+	<!-- 依赖管理 -->
+	<dependencies>
+		
+		<!-- svg 生成png格式图片结束 -->
+		<dependency>
+			<groupId>com.kedacom.sp</groupId>
+			<artifactId>sp-mtcmcs</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+	</dependencies>
+</project>

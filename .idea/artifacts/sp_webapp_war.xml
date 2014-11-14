@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sp-webapp:war">
+    <output-path>$PROJECT_DIR$/sp-webapp/target</output-path>
+    <root id="archive" name="sp.war">
+      <element id="artifact" artifact-name="sp-webapp:war exploded" />
+    </root>
+  </artifact>
+</component>
